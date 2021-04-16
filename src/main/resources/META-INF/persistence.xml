@@ -5,7 +5,6 @@
     <persistence-unit name="inventoryManagement" transaction-type="JTA">
         <jta-data-source>java:/postgreDataSource</jta-data-source>
         <class>com.ignjatov.entity.Inventory</class>
-        <class>com.ignjatov.entity.Store</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

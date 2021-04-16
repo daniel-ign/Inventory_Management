@@ -6,6 +6,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +20,8 @@ public class InventoryService implements InventoryInterface{
     @Override
     public List<Inventory> getInventoryList() {
         List<Inventory> inventoryList = em.createNamedQuery("Inventory.findAll",Inventory.class).getResultList();
-        return inventoryList.stream().sorted().collect(Collectors.toList());
+        Collections.sort(inventoryList);
+        return inventoryList;
     }
 
     @Override

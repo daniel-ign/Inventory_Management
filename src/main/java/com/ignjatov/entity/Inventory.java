@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -58,6 +59,6 @@ public class Inventory implements Comparable<Inventory>, Serializable{
 
     @Override
     public int compareTo(Inventory o) {
-        return name.compareTo(o.name);
+        return this.getName().compareToIgnoreCase(o.name);
     }
 }
